@@ -2,44 +2,31 @@ package Capa.Negocio;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Conexion {
+	private final String base = "aeropuerto";
+	private final String user = "root";
+	private final String password = "";
+	private final String url = "jdbc:mysql://localhost:3306/" + base;
+	private Connection con = null;
 
-	private Connection con;
-	private Statement stmt;
+	public Connection getConexion() {
 
-	public Conexion() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(this.url, this.user, this.password);
 
-			this.con = DriverManager.getConnection("jdbc:mysql://localhost:3308/aeropuerto?useSSL=false", "root", "");
-
-			this.stmt = con.createStatement();
-
-		} catch (Exception e) {
-			System.out.println("Error en la conexion con la BBDD");
-			e.printStackTrace();
+		} catch (SQLException e) {
+			System.err.println(e);
+		} catch (ClassNotFoundException ex) {
+			Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
 		}
+		return con;
 	}
 
-	public boolean insertOrUpdateOrDelete(String consulta) {
-		try {
-			this.stmt.execute(consulta);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
-	public ResultSet select(String consulta) {
-		try {
-			ResultSet rs = this.stmt.executeQuery(consulta);
-			return rs;
-		} catch (Exception e) {
-			return null;
-		}
-
-	}
 }
+
 

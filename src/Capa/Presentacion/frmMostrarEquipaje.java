@@ -12,7 +12,7 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-public class frmMostarEquipaje extends JFrame {
+public class frmMostrarEquipaje extends JFrame {
 
 	/**
 	 * 
@@ -38,7 +38,7 @@ public class frmMostarEquipaje extends JFrame {
 	 */
 
 
-	public frmMostarEquipaje() {
+	public frmMostrarEquipaje() {
 		setTitle("Mostar Equipaje");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 603, 308);

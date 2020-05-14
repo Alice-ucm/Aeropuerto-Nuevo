@@ -1,8 +1,8 @@
 package Capa.Integracion;
 
 
-/*import Modelo.SATransporte;*/
 import Capa.Negocio.SAAlmacen;
+import Capa.Negocio.SATransporte;
 
 public abstract class FactorySA {
 	private static FactorySA instance;
@@ -16,6 +16,6 @@ public abstract class FactorySA {
 
 	public abstract SAAlmacen creaSAEquipaje();
 
-	/* public abstract SATransporte creaSATransporte(); */
+	public abstract SATransporte creaSATransporte();
 
 }

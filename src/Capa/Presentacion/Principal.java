@@ -62,7 +62,7 @@ public class Principal extends JFrame {
 		mnNewMenu.setIcon(new ImageIcon(Principal.class.getResource("/img/ico-inicio.png")));
 		menuBar.add(mnNewMenu);
 
-		JMenu mnNewMenu_1 = new JMenu("Almacen");
+		JMenu mnNewMenu_1 = new JMenu("Almacén");
 		mnNewMenu_1.setIcon(new ImageIcon(Principal.class.getResource("/img/ico-almacen2.png")));
 		menuBar.add(mnNewMenu_1);
 
@@ -71,7 +71,7 @@ public class Principal extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-				frmMostarEquipaje verventana = new frmMostarEquipaje();
+				frmMostrarEquipaje verventana = new frmMostrarEquipaje();
 				verventana.setVisible(true);
 
 			}
@@ -124,9 +124,37 @@ public class Principal extends JFrame {
 		menuBar.add(mnNewMenu_2);
 
 		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Seleccionar Transporte");
+		mntmNewMenuItem_5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				frmTransporteSeleccionar verventana = new frmTransporteSeleccionar();
+				verventana.setVisible(true);
+			}
+		});
 		mnNewMenu_2.add(mntmNewMenuItem_5);
 
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Horario Transporte");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				frmTransporteHorario verventana = new frmTransporteHorario();
+				verventana.setVisible(true);
+
+			}
+		});
+
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Seleccionar Disponilidad");
+		mntmNewMenuItem_7.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frmTransporteDisponible verventana = new frmTransporteDisponible();
+				verventana.setVisible(true);
+
+			}
+
+		});
+		mnNewMenu_2.add(mntmNewMenuItem_7);
 		mnNewMenu_2.add(mntmNewMenuItem_6);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(192, 192, 192));

@@ -1,9 +1,27 @@
 package Capa.Presentacion;
 
-import Capa.Negocio.Conexion;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Controlador {
+import Capa.Integracion.PersonaDAO;
 
-	public Conexion con;
+public abstract class Controlador implements ActionListener {
 
+	PersonaDAO dao = new PersonaDAO();
+
+	Principal vista = new Principal();
+
+	frmMostrarEquipaje vista2 = new frmMostrarEquipaje();
+
+
+	public Controlador(Principal v) {
+		this.vista = v;
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
 }
